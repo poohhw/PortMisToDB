@@ -14,6 +14,7 @@ namespace PortMisDataToDB
         private Dictionary<string, string> ControlCommunicationStauts = new Dictionary<string, string>()
         {
             {"rnum","순번" },
+            {"prtAgNm","항명" },
             {"clsgn","호출부호"},
             {"etryptYear","입항횟수(연도)"},
             {"etryptCo","입항횟수(횟수)"},
@@ -42,6 +43,7 @@ namespace PortMisDataToDB
             {"telnoRm","전화번호비고"},
         };
         //public string rnum { get; set; }//순번
+         public string prtAgNm { get; set; }//항명
         public string clsgn { get; set; }//호출부호
         public string etryptYear { get; set; }//입항횟수(연도)
         public string etryptCo { get; set; }//입항횟수(횟수)  

@@ -14,6 +14,7 @@ namespace PortMisDataToDB
         {
             {"idx" , "교신현황 순번" },
             {"commCo","순번"},
+            {"prtAgNm","항명" },
             {"clsgn","호출부호"},
             {"cntrlSe","구분(코드)"},
             {"cntrlNm","구분(이름)"},
@@ -30,6 +31,7 @@ namespace PortMisDataToDB
         };
         //public string idx { get; set; }//교신현황순번
         public string commCo { get; set; }//순번
+        public string prtAgNm { get; set; }//순번
         public string clsgn { get; set; }//호출부호
         public string cntrlSe { get; set; }//구분(코드)
         public string cntrlNm { get; set; }//구분(이름)

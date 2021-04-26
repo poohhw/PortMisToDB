@@ -24,6 +24,7 @@ namespace PortMisDataToDB
             {"shipngNatCd","선적항(국적코드)"},
             {"shipngPrtCd","선적항(항코드)"},
             {"shipngPrtNm","선적항(이름)"},
+            {"vsslKndNm","선박종류"},
             {"grtg","총톤수"},
             {"ntng","순톤수"},
             {"intrlGrtg","국제총톤수"},
@@ -67,6 +68,7 @@ namespace PortMisDataToDB
         public string shipngNatCd { get; set; }                                     //    선적항(국적코드)                                      
         public string shipngPrtCd { get; set; }                                     //    선적항(항코드)                                      
         public string shipngPrtNm { get; set; }                                     //    선적항(이름)                                      
+        public string vsslKndNm { get; set; }                                 //선박 종류
         public string grtg { get; set; }                                     //    총톤수                                      
         public string ntng { get; set; }                                     //    순톤수                                      
         public string intrlGrtg { get; set; }                                     //  국제총톤수                                      

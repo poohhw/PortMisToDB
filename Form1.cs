@@ -19,7 +19,7 @@ namespace PortMisDataToDB
   
     public partial class Form1 : Form
     {
-        private string connectionString = "Data Source=155.155.4.93;Initial Catalog=Portmis;User ID=sa;Password=gcsc8932";
+        private string connectionString = string.Empty; //"Data Source=155.155.4.93;Initial Catalog=Portmis;User ID=sa;Password=gcsc8932";
         private string[] arrFolder = new string[] {"SI","FU","PIO","DC","VHF","VHF_DETAIL"};
         private List<FileInfo[]> fileList = new List<FileInfo[]>();
         private string sRootPath;
@@ -27,6 +27,7 @@ namespace PortMisDataToDB
         {
             InitializeComponent();
             sRootPath = ConfigurationManager.AppSettings["RootPath"];
+            connectionString = ConfigurationManager.AppSettings["ConnectionString"];
             lbl_RootFolder.Text = sRootPath;
             ShowFile(sRootPath);
 
@@ -192,6 +193,7 @@ namespace PortMisDataToDB
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message.ToString());
                 return null;
             }
             return csvData;
@@ -285,6 +287,7 @@ namespace PortMisDataToDB
                            .AddAllColumns()
                            .BulkInsertOrUpdate()
                            //.SetIdentityColumn(x => x.clsgn)
+                           .MatchTargetOn(x => x.prtAgNm)
                            .MatchTargetOn(x => x.clsgn)
                            .MatchTargetOn(x => x.etryptYear)
                            .MatchTargetOn(x => x.etryptCo)
@@ -354,6 +357,7 @@ namespace PortMisDataToDB
                            .WithTable("ControlCommunication")
                            .AddAllColumns()
                            .BulkInsertOrUpdate()
+                           .MatchTargetOn(x => x.prtAgNm)
                            .MatchTargetOn(x => x.clsgn)
                            .MatchTargetOn(x => x.etryptYear)
                            .MatchTargetOn(x => x.etryptCo)
@@ -383,6 +387,7 @@ namespace PortMisDataToDB
                            .WithTable("ControlCommunicationDetail")
                            .AddAllColumns()
                            .BulkInsertOrUpdate()
+                           .MatchTargetOn(x => x.prtAgNm)
                            .MatchTargetOn(x => x.commCo)
                            .MatchTargetOn(x => x.clsgn)
                            .MatchTargetOn(x => x.cntrlSe)
