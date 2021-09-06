@@ -293,6 +293,7 @@ namespace PortMisDataToDB
                            .MatchTargetOn(x => x.etryptCo)
                            .MatchTargetOn(x => x.fcltyUseCo)
                            .MatchTargetOn(x=>x.reqstFcltyCd)
+                           .MatchTargetOn(x => x.realTn)
                            .Commit(conn);
                 }
 
